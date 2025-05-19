@@ -124,10 +124,11 @@ export default function Header() {
           </Stack>
           <List>
             {navItems.map((item) => (
-              <ListItemButton onClick={() => scrollTo(item.id)} key="home">
-                <ListItemText primary="Home" />
+              <ListItemButton onClick={() => scrollTo(item.id)} key={item.id}>
+                <ListItemText primary={item.label} />
               </ListItemButton>
             ))}
+
             <ListItemButton
               onClick={() => {
                 router.push("/ownCards");
